@@ -35,9 +35,9 @@ services:
   #db:
   #  image: postgres:10-alpine
   #  environment:
-  #    - POSTGRES_DB=family_cooking
-  #    - POSTGRES_PASSWORD=pswd
-  #    - POSTGRES_USER=herveGuigoz
+  #    - POSTGRES_DB=dbName
+  #    - POSTGRES_PASSWORD=dbPassword
+  #    - POSTGRES_USER=dbUser
   #  volumes:
       # - db-data:/var/lib/postgresql/data:rw
       # you may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
@@ -52,9 +52,9 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: family_cooking
-      MYSQL_USER: herveGuigoz
-      MYSQL_PASSWORD: pswd
+      MYSQL_DATABASE: dbName
+      MYSQL_USER: dbUser
+      MYSQL_PASSWORD: dbPassword
     volumes:
       - ./.docker/db/data:/var/lib/mysql:rw
     ports:
