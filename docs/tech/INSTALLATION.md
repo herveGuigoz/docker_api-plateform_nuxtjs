@@ -3,6 +3,15 @@
 ## Required
 - [Docker compose](https://docs.docker.com/compose/install/)
 
+## Database
+
+You can choose mySQL or postgresSQL.
+
+Edit these files with your preferences:
+- api/.env
+- docker-compose.yaml
+- api/config/packages/doctrine.yaml
+
 ## Prod
 Create the file `api/.env.local`:
 ```yml
@@ -29,3 +38,7 @@ Create the file `client/.env`:
 CODE_ADMIN=1987
 ```
 Then run `make install` and have a :coffee:.
+
+For fresh install run 
+- `docker-compose php bin/console make:migration`
+- `docker-compose php bin/console doctrine:migrations:migrate`
